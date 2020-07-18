@@ -18,13 +18,13 @@ After the postcss-multiple-wrapper-loader the file will be following
 ### How it works
 In the webpack config file initialize the loader
 ```
-const PostCssWrapper = require('postcss-wrapper-loader');
+const PostCssMultipleWrapper = require('postcss-wrapper-loader');
 ```
 
 add this plugin in webpack plugins
 ```
   plugins: [
     new ExtractTextWebpackPlugin('styles.css'),
-    new PostCssWrapper('styles.css', '.wrapper')
+    new PostCssMultipleWrapper('styles.css', '.wrapper')
   ]
 ```

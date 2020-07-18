@@ -53,4 +53,4 @@ PostCssMultipleWrapper.prototype.apply = function(compiler) {
   });
 };
 
-module.exports = PostCssWrapper;
+module.exports = PostCssMultipleWrapper;

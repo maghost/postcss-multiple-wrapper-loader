@@ -16,7 +16,7 @@
     "global class wrapper",
     "parent class wrapper"
   ],
-  "author": "Farhad Yasir",
+  "author": "Matheus Marques",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.15.0",
