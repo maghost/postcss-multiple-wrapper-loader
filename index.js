@@ -35,9 +35,9 @@ PostCssMultipleWrapper.prototype.apply = function(compiler) {
   const file = this.file;
   const container = this.container;
 
-  console.log('compiler', compiler)
-
-  compiler.plugin('emit', function(compilation, callback) {
+  compiler.hooks.emit.tap('PostCssMultipleWrapper', function(compilation, callback) {
+    console.log('compilation', compilation);
+    console.log('callback', callback);
     const assets = compilation.assets;
 
     if (!_.has(file, assets)) return callback();
