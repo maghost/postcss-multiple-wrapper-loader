@@ -3,7 +3,7 @@ const postCss = require('postcss');
 
 const keyFramesParent = ['keyframes', '-webkit-keyframes', '-moz-keyframes'];
 
-const postCssWrapperPlugin= postCss.plugin('postcss-wrapper-plugin', function(prefix) {
+const postCssMultipleWrapperPlugin= postCss.plugin('postcss-multiple-wrapper-plugin', function(prefix) {
     return function(css) {
       css.walkRules(function(rule) {
         let parentName = _.get('parent.name', rule);
@@ -26,28 +26,30 @@ const joinPrefix = function(prefix) {
   };
 };
 
-function PostCssWrapper(file, container) {
+function PostCssMultipleWrapper(file, container) {
   this.file = file;
   this.container = container;
 }
 
-PostCssWrapper.prototype.apply = function(compiler) {
+PostCssMultipleWrapper.prototype.apply = function(compiler) {
   const file = this.file;
   const container = this.container;
 
   compiler.plugin('emit', function(compilation, callback) {
     const assets = compilation.assets;
+
     if (!_.has(file, assets)) return callback();
+
     const source = assets[file].source();
-    const processor = postCss([postCssWrapperPlugin(container)]);
+    const processor = postCss([postCssMultipleWrapperPlugin(container)]);
 
     processor.process(source).then(function(result) {
       compilation.assets[file] = {
         source: function() { return result.css; },
         size: function() { return result.css.length; }
-  };
-    callback();
-  }, callback);
+      };
+      callback();
+    }, callback);
   });
 };
 

@@ -1,5 +1,7 @@
 ## PostCss Wrapper Loader for Webpack
 
+Plugin based on https://github.com/nutboltu/postcss-wrapper-loader
+
 ### Example
 This plugin wraps all the cssClasses in a css file with a prefix class while webpack bundled. It helps to scope a specific css file with a prefix class
 
@@ -8,7 +10,7 @@ Consider a simple css file `styles.css`:
 .css-class1 {height: auto;}.css-class2 {width: auto;}
 ```
 
-After the postcss-wrapper-loader the file will be following
+After the postcss-multiple-wrapper-loader the file will be following
 ```
 .wrapper .css-class1 {height: auto;} .wrapper .css-class2 {width: auto;}
 ```

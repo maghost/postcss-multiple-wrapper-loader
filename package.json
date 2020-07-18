@@ -1,12 +1,12 @@
 {
-  "name": "postcss-wrapper-loader",
-  "version": "1.0.2",
+  "name": "postcss-multiple-wrapper-loader",
+  "version": "1.0.0",
   "private": false,
   "description": "This plugin wraps all the cssClasses in a css file with a prefix class while webpack bundled. It helps to scope a specific css file with a prefix class",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nutboltu/postcss-wrapper-loader.git"
+    "url": "https://github.com/maghost/postcss-multiple-wrapper-loader.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
