@@ -35,6 +35,8 @@ PostCssMultipleWrapper.prototype.apply = function(compiler) {
   const file = this.file;
   const container = this.container;
 
+  console.log('compiler', compiler)
+
   compiler.plugin('emit', function(compilation, callback) {
     const assets = compilation.assets;
 
